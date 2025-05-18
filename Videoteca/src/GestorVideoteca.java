@@ -24,8 +24,6 @@ public class GestorVideoteca {
         return peliculas;
     }
 
-
-
     public void añadirPelicula(Pelicula pelicula) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(RUTA, true))) {
             writer.write(pelicula.toFileString());
@@ -35,6 +33,13 @@ public class GestorVideoteca {
         }
     }
 
-
+    public Pelicula buscarPeliculaCodigo(ArrayList<Pelicula> peliculas, String codigo) {
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getCodigo().equalsIgnoreCase(codigo)) {
+                return pelicula;
+            }
+        }
+        return null;
+    }
 
 }

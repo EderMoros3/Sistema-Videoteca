@@ -5,6 +5,8 @@ public class Videoteca {
     Scanner sc = new Scanner(System.in);
     GestorVideoteca gestor = new GestorVideoteca();
 
+    public Videoteca() {}
+
     public void menuPrincipal() {
         int opcion;
 
@@ -17,12 +19,13 @@ public class Videoteca {
             System.out.println("5. Mostrar todas las peliculas");
             System.out.println("6. Salir");
             System.out.println("-->");
-            opcion = sc.nextInt();
-
-            if (!sc.hasNextInt()) {
+            
+            while (!sc.hasNextInt()) {
                 System.out.println("Introduce una opcion valida");
-                return;
+                sc.next();
             }
+            opcion = sc.nextInt();
+            sc.nextLine();
 
             switch (opcion) {
                 case 1 -> añadirPelicula();
@@ -71,10 +74,17 @@ public class Videoteca {
     }   
 
     public void buscarPeliculaCodigo() {
+        ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
         System.out.println("\nIntroduce el Codigo de la pelicula a buscar: ");
         String codigo = sc.nextLine();
         sc.nextLine();
 
+        Pelicula pelicula = gestor.buscarPeliculaCodigo(peliculas, codigo);
+        if (pelicula != null) {
+            System.out.println(pelicula);
+        } else {
+            System.out.println("No se encontro ninguna pelicula");
+        }
 
     }
 
