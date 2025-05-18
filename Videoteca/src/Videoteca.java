@@ -114,7 +114,8 @@ public class Videoteca {
         String titulo = sc.nextLine().trim();
         sc.nextLine();
 
-        gestor.buscarPeliculaTitulo(peliculas, titulo);
+        Pelicula pelicula = gestor.buscarPeliculaTitulo(peliculas, titulo);
+        System.out.println(pelicula);
 
 
     }
