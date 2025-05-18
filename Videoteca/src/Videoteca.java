@@ -42,14 +42,14 @@ public class Videoteca {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
 
         System.out.println("\nIntroduce el Titulo de la pelicula: ");
-        String titulo = sc.nextLine();
+        String titulo = sc.nextLine().trim();
         sc.nextLine();
         System.out.println("Introduce el nombre del Director de la pelicula");
-        String autor = sc.nextLine();
+        String autor = sc.nextLine().trim();
         System.out.println("Introduce el Codigo de la pelicula: ");
-        String codigo = sc.nextLine();
+        String codigo = sc.nextLine().trim();
         System.out.println("Introduce el Año de estreno de la pelicula: ");
-        String yearStr = sc.nextLine();
+        String yearStr = sc.nextLine().trim();
         
         if (titulo.isEmpty() || autor.isEmpty() || codigo.isEmpty() || yearStr.isEmpty()) {
             System.out.println("Todos los campos son obligatorios para crear una pelicula");
@@ -77,7 +77,7 @@ public class Videoteca {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
 
         System.out.println("\nIntroduce el Codigo de la pelicula a buscar: ");
-        String codigo = sc.nextLine();
+        String codigo = sc.nextLine().trim();
         sc.nextLine();
 
         Pelicula pelicula = gestor.buscarPeliculaCodigo(peliculas, codigo);
@@ -93,20 +93,25 @@ public class Videoteca {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
 
         System.out.println("\nIntroduce el Director de las peliculas a buscar: ");
-        String director = sc.nextLine();
+        String director = sc.nextLine().trim();
         sc.nextLine();
 
-        System.out.println("Peliculas de " + director + ": ");
-        gestor.buscarPeliculaDirector(peliculas, director);
-
-
+        ArrayList<Pelicula> resultado = gestor.buscarPeliculaDirector(peliculas, director);
+        if (resultado.isEmpty()) {
+            System.out.println("No hay peliculas de ese director");
+        }else {
+            System.out.println("Peliculas de " + director + ": ");
+            for (Pelicula pelicula : resultado) {
+                System.out.println(pelicula);
+            }
+        }
     }
 
     public void buscarPeliculaTitulo() {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
         
         System.out.println("\nIntroduce el Titulo de la pelicula a buscar: ");
-        String titulo = sc.nextLine();
+        String titulo = sc.nextLine().trim();
         sc.nextLine();
 
         gestor.buscarPeliculaTitulo(peliculas, titulo);

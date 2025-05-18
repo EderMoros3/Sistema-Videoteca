@@ -15,7 +15,7 @@ public class GestorVideoteca {
             while ((linea = reader.readLine()) != null) {
                 String[] partes = linea.split(";");
                 if (partes.length == 4) {
-                    peliculas.add(new Pelicula(partes[0], partes[1], partes[2], Integer.parseInt(partes[3])));
+                    peliculas.add(new Pelicula(partes[0], partes[1], partes[2], Integer.parseInt(partes[3].trim())));
                 }
             }
         } catch (IOException e) {
@@ -46,7 +46,7 @@ public class GestorVideoteca {
         ArrayList<Pelicula> resultado = new ArrayList<>();
 
         for (Pelicula pelicula : peliculas) {
-            if (pelicula.getAutor().toLowerCase().contains(director)) {
+            if (pelicula.getAutor().toLowerCase().contains(director.toLowerCase())) {
                 resultado.add(pelicula);
             }
         }
