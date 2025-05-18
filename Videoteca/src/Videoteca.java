@@ -116,9 +116,15 @@ public class Videoteca {
 
     public void mostrarTotalPeliculas() {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
-        
+        if (peliculas.isEmpty()) {
+            System.out.println("No hay peliculas registradas");
+        }
+
         System.out.println("\nPeliculas guardadas: ");
         System.out.println("-----------------------");
+        for (Pelicula pelicula : peliculas) {
+            System.out.println(pelicula);
+        }
     
     
     }

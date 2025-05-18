@@ -56,7 +56,7 @@ public class GestorVideoteca {
     public Pelicula buscarPeliculaTitulo(ArrayList<Pelicula> peliculas, String titulo) {
         for (Pelicula pelicula : peliculas) {
             if (pelicula.getTitulo().equalsIgnoreCase(titulo)) {
-                return pelicula
+                return pelicula;
             }
         }
         return null;
