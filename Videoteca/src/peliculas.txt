@@ -1,0 +1,11 @@
+Interestellar;Cristopher Nolan;pelicula1;2002
+The Shawshank Redemption;Frank Darabont;pelicula2;1994  
+Pulp Fiction;Quentin Tarantino;pelicula3;1994  
+The Godfather;Francis Ford Coppola;pelicula4;1972  
+The Dark Knight;Christopher Nolan;pelicula5;2008  
+Forrest Gump;Robert Zemeckis;pelicula6;1994  
+Inception;Christopher Nolan;pelicula7;2010  
+Fight Club;David Fincher;pelicula8;1999  
+The Matrix;Lana Wachowski y Lilly Wachowski;pelicula9;1999  
+Parasite;Bong Joon-ho;pelicula10;2019  
+Gladiator;Ridley Scott;pelicula11;2000  
