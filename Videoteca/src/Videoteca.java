@@ -75,6 +75,7 @@ public class Videoteca {
 
     public void buscarPeliculaCodigo() {
         ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
+
         System.out.println("\nIntroduce el Codigo de la pelicula a buscar: ");
         String codigo = sc.nextLine();
         sc.nextLine();
@@ -89,22 +90,33 @@ public class Videoteca {
     }
 
     public void buscarPeliculaDirector() {
+        ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
+
         System.out.println("\nIntroduce el Director de las peliculas a buscar: ");
         String director = sc.nextLine();
         sc.nextLine();
+
+        System.out.println("Peliculas de " + director + ": ");
+        gestor.buscarPeliculaDirector(peliculas, director);
 
 
     }
 
     public void buscarPeliculaTitulo() {
+        ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
+        
         System.out.println("\nIntroduce el Titulo de la pelicula a buscar: ");
         String titulo = sc.nextLine();
         sc.nextLine();
+
+        gestor.buscarPeliculaTitulo(peliculas, titulo);
 
 
     }
 
     public void mostrarTotalPeliculas() {
+        ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
+        
         System.out.println("\nPeliculas guardadas: ");
         System.out.println("-----------------------");
     

@@ -42,4 +42,23 @@ public class GestorVideoteca {
         return null;
     }
 
+    public ArrayList<Pelicula> buscarPeliculaDirector(ArrayList<Pelicula> peliculas, String director) {
+        ArrayList<Pelicula> resultado = new ArrayList<>();
+
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getAutor().toLowerCase().contains(director)) {
+                resultado.add(pelicula);
+            }
+        }
+        return resultado;
+    }
+
+    public Pelicula buscarPeliculaTitulo(ArrayList<Pelicula> peliculas, String titulo) {
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getTitulo().equalsIgnoreCase(titulo)) {
+                return pelicula
+            }
+        }
+        return null;
+    }
 }
