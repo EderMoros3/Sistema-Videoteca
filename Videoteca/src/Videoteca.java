@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Videoteca {
     Scanner sc = new Scanner(System.in);
+    GestorVideoteca gestor = new GestorVideoteca();
 
     public void menuPrincipal() {
         int opcion;
