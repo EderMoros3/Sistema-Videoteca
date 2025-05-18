@@ -40,7 +40,50 @@ public class Videoteca {
     }
 
     public void añadirPelicula() {
-        
+        System.out.println("\nIntroduce el Titulo de la pelicula: ");
+        String titulo = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Introduce el nombre del Director de la pelicula");
+        String autor = sc.nextLine();
+        System.out.println("Introduce el Codigo de la pelicula: ");
+        String codigo = sc.nextLine();
+        System.out.println("Introduce el Año de estreno de la pelicula: ");
+        String yearStr = sc.nextLine();
+    
+    
+    
+    
+    }   
+
+    public void buscarPeliculaCodigo() {
+        System.out.println("\nIntroduce el Codigo de la pelicula a buscar: ");
+        String codigo = sc.nextLine();
+        sc.nextLine();
+
+
+    }
+
+    public void buscarPeliculaDirector() {
+        System.out.println("\nIntroduce el Director de las peliculas a buscar: ");
+        String director = sc.nextLine();
+        sc.nextLine();
+
+
+    }
+
+    public void buscarPeliculaTitulo() {
+        System.out.println("\nIntroduce el Titulo de la pelicula a buscar: ");
+        String titulo = sc.nextLine();
+        sc.nextLine();
+
+
+    }
+
+    public void mostrarTotalPeliculas() {
+        System.out.println("\nPeliculas guardadas: ");
+        System.out.println("-----------------------");
+    
+    
     }
 
 }
