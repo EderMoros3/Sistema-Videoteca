@@ -3,11 +3,6 @@ import java.util.Scanner;
 
 public class Videoteca {
     Scanner sc = new Scanner(System.in);
-    private ArrayList<Pelicula> peliculas;
-
-    public Videoteca() {
-        peliculas = new ArrayList<>();
-    }
 
     public void menuPrincipal() {
         int opcion;
@@ -40,6 +35,8 @@ public class Videoteca {
     }
 
     public void añadirPelicula() {
+        ArrayList<Pelicula> peliculas = gestor.cargarPeliculas();
+
         System.out.println("\nIntroduce el Titulo de la pelicula: ");
         String titulo = sc.nextLine();
         sc.nextLine();
@@ -49,10 +46,27 @@ public class Videoteca {
         String codigo = sc.nextLine();
         System.out.println("Introduce el Año de estreno de la pelicula: ");
         String yearStr = sc.nextLine();
-    
-    
-    
-    
+        
+        if (titulo.isEmpty() || autor.isEmpty() || codigo.isEmpty() || yearStr.isEmpty()) {
+            System.out.println("Todos los campos son obligatorios para crear una pelicula");
+            return;
+        }
+
+        for (Pelicula pelicula : peliculas) {
+                if (pelicula.getCodigo().equalsIgnoreCase(codigo)) {
+                    System.out.println("No puedo haber codigos duplicados");
+                    return;
+                }
+            }
+
+        try {
+            int year = Integer.parseInt(yearStr);
+            Pelicula nuevPelicula = new Pelicula(titulo, autor, codigo, year);
+            gestor.añadirPelicula(nuevPelicula);
+        } catch (NumberFormatException e) {
+            System.err.println("Error a la hora de cambiar el año a numero: " + e.getMessage());
+        }
+        System.out.println("Pelicula añadida con exito");
     }   
 
     public void buscarPeliculaCodigo() {
